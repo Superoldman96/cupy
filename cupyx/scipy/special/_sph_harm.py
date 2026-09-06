@@ -105,7 +105,7 @@ def sph_harm(m, n, theta, phi, out=None):
 def sph_harm_y(n, m, theta, phi, *, diff_n=0):
     """Spherical Harmonic.
 
-    .. seealso:: :meth:`scipy.special.sph_harm`
+    .. seealso:: :meth:`scipy.special.sph_harm_y`
     """
     if diff_n != 0:
         raise NotImplementedError("Derivatives not implemented.")

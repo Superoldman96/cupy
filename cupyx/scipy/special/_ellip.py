@@ -87,15 +87,16 @@ ellipkm1 = _core.create_ufunc(
     ('f->f', 'd->d'),
     'out0 = ellpk(in0)',
     preamble=polevl_definition+ellpk_definition,
-    doc="""ellpkm1.
+    doc="""Complete elliptic integral of the first kind around ``m = 1``.
 
     Args:
-        x (cupy.ndarray): The input of digamma function.
+        p (cupy.ndarray): Defines the parameter of the elliptic integral as
+            ``m = 1 - p``.
 
     Returns:
-        cupy.ndarray: Computed value of digamma function.
+        cupy.ndarray: Computed value of the elliptic integral.
 
-    .. seealso:: :data:`scipy.special.digamma`
+    .. seealso:: :data:`scipy.special.ellipkm1`
 
     """)
 
@@ -105,15 +106,15 @@ ellipk = _core.create_ufunc(
     ("f->f", "d->d"),
     'out0 = ellpkm1(in0)',
     preamble=polevl_definition+ellpk_definition,
-    doc="""ellpk.
+    doc="""Complete elliptic integral of the first kind.
 
     Args:
-        x (cupy.ndarray): The input of digamma function.
+        m (cupy.ndarray): Parameter of the elliptic integral.
 
     Returns:
-        cupy.ndarray: Computed value of digamma function.
+        cupy.ndarray: Computed value of the elliptic integral.
 
-    .. seealso:: :data:`scipy.special.digamma`
+    .. seealso:: :data:`scipy.special.ellipk`
 
     """)
 
@@ -221,7 +222,7 @@ ellipj = _core.create_ufunc(
         out0 = sn; out1 = cn; out2 = dn; out3 = ph;
     ''',
     preamble=ellipj_preamble,
-    doc="""ellipj
+    doc="""Jacobi elliptic functions.
 
      Args:
          u (cupy.ndarray): The input of ellipj function.
@@ -242,9 +243,7 @@ ellipkinc = _core.create_ufunc(
     'cupyx_scipy_special_ellipkinc', ('ff->f', 'dd->d'),
     'out0 = xsf::cephes::ellik(in0, in1)',
     preamble=ellipkinc_preamble,
-    doc="""ellipkinc
-
-    Incomplete elliptic integral of the first kind
+    doc="""Incomplete elliptic integral of the first kind.
 
     .. seealso:: :meth:`scipy.special.ellipkinc`
 
@@ -255,9 +254,7 @@ ellipeinc = _core.create_ufunc(
     'cupyx_scipy_special_ellipeinc', ('ff->f', 'dd->d'),
     'out0 = xsf::cephes::ellie(in0, in1)',
     preamble=ellipeinc_preamble,
-    doc="""ellipeinc
-
-    Incomplete elliptic integral of the second kind
+    doc="""Incomplete elliptic integral of the second kind.
 
     .. seealso:: :meth:`scipy.special.ellipeinc`
 
